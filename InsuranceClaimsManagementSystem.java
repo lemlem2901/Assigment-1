@@ -164,6 +164,33 @@ public class InsuranceClaimsManagementSystem {
                     }
                     break;
                 case 4:
+                    // Implement view a claim functionality
+                    System.out.println("Viewing a claim:");
+
+                    // Prompt user for claim ID to view
+                    System.out.print("Enter claim ID to view: ");
+                    String viewClaimId = scanner.nextLine();
+
+                    // Retrieve the claim by ID
+                    Claim viewedClaim = claimProcessManager.getClaimById(viewClaimId);
+                    if (viewedClaim != null) {
+                        // Display claim details
+                        System.out.println("Claim ID: " + viewedClaim.getId());
+                        System.out.println("Claim Date: " + FileManager.dateFormat.format(viewedClaim.getClaimDate()));
+                        System.out.println("Insured Person: " + viewedClaim.getInsuredPerson());
+                        System.out.println("Card Number: " + viewedClaim.getCardNumber());
+                        System.out.println("Exam Date: " + FileManager.dateFormat.format(viewedClaim.getExamDate()));
+                        System.out.println("Claim Amount: " + viewedClaim.getClaimAmount());
+                        System.out.println("Status: " + viewedClaim.getStatus());
+                        System.out.println("Receiver Banking Info: " + viewedClaim.getReceiverBankingInfo());
+                        System.out.println("Documents:");
+                        for (String document : viewedClaim.getDocuments()) {
+                            System.out.println("- " + document);
+                        }
+                    } else {
+                        System.out.println("Claim with ID " + viewClaimId + " does not exist.");
+                    }
+                    break;
                 case 5:
                 case 6:
             }
