@@ -4,6 +4,13 @@
 import java.util.*;
 public class InsuranceClaimsManagementSystem {
     public static void main(String[] args) {
+        // Read data from files
+        List<Customer> customers = FileManager.readCustomersFromFile();
+        List<Claim> claims = FileManager.readClaimsFromFile();
+
+        // Initialize ClaimProcessManagerImpl with loaded claims
+        ClaimProcessManagerImpl claimProcessManager = new ClaimProcessManagerImpl(claims);
+
         // Implement the text-based UI for interaction
         Scanner scanner = new Scanner(System.in);
         int choice;

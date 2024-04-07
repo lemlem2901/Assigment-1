@@ -74,6 +74,35 @@ public class FileManager {
         }
         return claims;
     }
+    // Save customers to file
+    public static void saveCustomers(List<Customer> customers) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(CUSTOMERS_FILE))) {
+            for (Customer customer : customers) {
+                writer.println(customer.getId() + "," + customer.getFullName() + "," + customer.getInsuranceCard().getCardNumber());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Save claims to file
+    public static void saveClaims(List<Claim> claims) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(CLAIMS_FILE))) {
+            for (Claim claim : claims) {
+                writer.println(claim.getId() + "," +
+                        dateFormat.format(claim.getClaimDate()) + "," +
+                        claim.getInsuredPerson() + "," +
+                        claim.getCardNumber() + "," +
+                        dateFormat.format(claim.getExamDate()) + "," +
+                        claim.getClaimAmount() + "," +
+                        claim.getStatus() + "," +
+                        claim.getReceiverBankingInfo() + "," +
+                        String.join(";", claim.getDocuments())); // Join documents with ";"
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     // Helper method to find insurance card by card number
     private static InsuranceCard findInsuranceCard(String cardNumber) {
         for (InsuranceCard card : readInsuranceCardsFromFile()) {
