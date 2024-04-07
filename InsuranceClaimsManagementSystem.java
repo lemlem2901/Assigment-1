@@ -1,6 +1,7 @@
 /**
  * @author <Nguyen Dinh Lam - s3990403>
  */
+import java.text.ParseException;
 import java.util.*;
 public class InsuranceClaimsManagementSystem {
     public static void main(String[] args) {
@@ -27,6 +28,61 @@ public class InsuranceClaimsManagementSystem {
             scanner.nextLine(); // Consume newline
             switch (choice) {
                 case 1:
+                    // Implement add claim functionality
+                    System.out.println("Adding a new claim:");
+
+                    // Prompt user for claim details
+                    System.out.print("Enter claim ID: ");
+                    String claimId = scanner.nextLine();
+                    System.out.print("Enter claim date (yyyy-MM-dd): ");
+                    String claimDateString = scanner.nextLine();
+                    Date claimDate = null;
+                    try {
+                        claimDate = FileManager.dateFormat.parse(claimDateString);
+                    } catch (ParseException e) {
+                        System.out.println("Invalid date format. Please enter the date in the format yyyy-MM-dd.");
+                        break;
+                    }
+                    System.out.print("Enter insured person: ");
+                    String insuredPerson = scanner.nextLine();
+                    System.out.print("Enter card number: ");
+                    String cardNumber = scanner.nextLine();
+                    System.out.print("Enter exam date (yyyy-MM-dd): ");
+                    String examDateString = scanner.nextLine();
+                    Date examDate = null;
+                    try {
+                        examDate = FileManager.dateFormat.parse(examDateString);
+                    } catch (ParseException e) {
+                        System.out.println("Invalid date format. Please enter the date in the format yyyy-MM-dd.");
+                        break;
+                    }
+                    System.out.print("Enter claim amount: ");
+                    double claimAmount = scanner.nextDouble();
+                    scanner.nextLine(); // Consume newline
+                    System.out.print("Enter status (New/Processing/Done): ");
+                    String status = scanner.nextLine();
+                    System.out.print("Enter receiver banking info: ");
+                    String receiverBankingInfo = scanner.nextLine();
+                    System.out.print("Enter number of documents: ");
+                    int numDocuments = scanner.nextInt();
+                    scanner.nextLine(); // Consume newline
+
+                    // Prompt user for each document
+                    List<String> documents = new ArrayList<>();
+                    for (int i = 1; i <= numDocuments; i++) {
+                        System.out.print("Enter document " + i + ": ");
+                        String document = scanner.nextLine();
+                        documents.add(document);
+                    }
+
+                    // Create the new claim object
+                    Claim newClaim = new Claim(claimId, claimDate, insuredPerson, cardNumber,
+                            examDate, documents, claimAmount, status, receiverBankingInfo);
+
+                    // Add the claim to the claim process manager
+                    claimProcessManager.addClaim(newClaim);
+                    System.out.println("Claim added successfully.");
+                    break;
                 case 2:
                 case 3:
                 case 4:
