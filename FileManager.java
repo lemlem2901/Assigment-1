@@ -60,9 +60,9 @@ public class FileManager {
                 String insuredPerson = parts[2];
                 String cardNumber = parts[3];
                 Date examDate = dateFormat.parse(parts[4]);
-                double claimAmount = Double.parseDouble(parts[6]); // Update index to 6
-                String status = parts[7]; // Status should be at index 7
-                String receiverBankingInfo = parts[8]; // Receiver banking info should be at index 8
+                double claimAmount = Double.parseDouble(parts[6]);
+                String status = parts[7];
+                String receiverBankingInfo = parts[8];
                 List<String> documents = new ArrayList<>();
                 for (int i = 5; i < parts.length - 3; i++) {
                     documents.add(parts[i]);
@@ -94,10 +94,10 @@ public class FileManager {
                         claim.getInsuredPerson() + "," +
                         claim.getCardNumber() + "," +
                         dateFormat.format(claim.getExamDate()) + "," +
+                        String.join(";", claim.getDocuments()) + "," + // Join documents with ";"
                         claim.getClaimAmount() + "," +
                         claim.getStatus() + "," +
-                        claim.getReceiverBankingInfo() + "," +
-                        String.join(";", claim.getDocuments())); // Join documents with ";"
+                        claim.getReceiverBankingInfo());
             }
         } catch (IOException e) {
             e.printStackTrace();
