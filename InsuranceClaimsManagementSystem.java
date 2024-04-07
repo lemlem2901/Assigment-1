@@ -219,7 +219,18 @@ public class InsuranceClaimsManagementSystem {
                             System.out.println();
                         }
                     }
+                    break;
                 case 6:
+                    // Save data before exiting
+                    FileManager.saveCustomers(customers);
+                    FileManager.saveClaims(claims);
+
+                    System.out.println("Exiting...");
+                    // Exit the program
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please enter a valid option.");
             }
         }while (choice != 6);
         scanner.close();
