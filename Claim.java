@@ -25,4 +25,40 @@ public class Claim {
         this.status = status;
         this.receiverBankingInfo = receiverBankingInfo;
     }
+    //getter
+    public String getId() {
+        return id;
+    }
+
+    public Date getClaimDate() {
+        return claimDate;
+    }
+
+    public String getInsuredPerson() {
+        return insuredPerson;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public Date getExamDate() {
+        return examDate;
+    }
+
+    public List<String> getDocuments() {
+        return documents;
+    }
+
+    public double getClaimAmount() {
+        return claimAmount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getReceiverBankingInfo() {
+        return receiverBankingInfo;
+    }
 }
