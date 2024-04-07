@@ -146,6 +146,23 @@ public class InsuranceClaimsManagementSystem {
                     }
                     break;
                 case 3:
+                    // Implement delete claim functionality
+                    System.out.println("Deleting a claim:");
+
+                    // Prompt user for claim ID to delete
+                    System.out.print("Enter claim ID to delete: ");
+                    String deleteClaimId = scanner.nextLine();
+
+                    // Check if the claim ID exists
+                    Claim claimToDelete = claimProcessManager.getClaimById(deleteClaimId);
+                    if (claimToDelete != null) {
+                        // Delete the claim
+                        claimProcessManager.deleteClaim(deleteClaimId);
+                        System.out.println("Claim with ID " + deleteClaimId + " deleted successfully.");
+                    } else {
+                        System.out.println("Claim with ID " + deleteClaimId + " does not exist.");
+                    }
+                    break;
                 case 4:
                 case 5:
                 case 6:
