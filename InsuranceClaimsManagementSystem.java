@@ -84,6 +84,67 @@ public class InsuranceClaimsManagementSystem {
                     System.out.println("Claim added successfully.");
                     break;
                 case 2:
+                    // Implement update claim functionality
+                    System.out.println("Updating a claim:");
+
+                    // Prompt user for claim ID to update
+                    System.out.print("Enter claim ID to update: ");
+                    String updateClaimId = scanner.nextLine();
+
+                    // Check if the claim ID exists
+                    Claim claimToUpdate = claimProcessManager.getClaimById(updateClaimId);
+                    if (claimToUpdate != null) {
+                        // Prompt user for updated details
+                        System.out.print("Enter new claim date (yyyy-MM-dd): ");
+                        String newClaimDateString = scanner.nextLine();
+                        Date newClaimDate = null;
+                        try {
+                            newClaimDate = FileManager.dateFormat.parse(newClaimDateString);
+                        } catch (ParseException e) {
+                            System.out.println("Invalid date format. Please enter the date in the format yyyy-MM-dd.");
+                            break;
+                        }
+                        System.out.print("Enter new insured person: ");
+                        String newInsuredPerson = scanner.nextLine();
+                        System.out.print("Enter new card number: ");
+                        String newCardNumber = scanner.nextLine();
+                        System.out.print("Enter new exam date (yyyy-MM-dd): ");
+                        String newExamDateString = scanner.nextLine();
+                        Date newExamDate = null;
+                        try {
+                            newExamDate = FileManager.dateFormat.parse(newExamDateString);
+                        } catch (ParseException e) {
+                            System.out.println("Invalid date format. Please enter the date in the format yyyy-MM-dd.");
+                            break;
+                        }
+                        System.out.print("Enter new claim amount: ");
+                        double newClaimAmount = scanner.nextDouble();
+                        scanner.nextLine(); // Consume newline
+                        System.out.print("Enter new status (New/Processing/Done): ");
+                        String newStatus = scanner.nextLine();
+                        System.out.print("Enter new receiver banking info: ");
+                        String newReceiverBankingInfo = scanner.nextLine();
+                        System.out.print("Enter new number of documents: ");
+                        int newNumDocuments = scanner.nextInt();
+                        scanner.nextLine(); // Consume newline
+
+                        // Prompt user for each new document
+                        List<String> newDocuments = new ArrayList<>();
+                        for (int i = 1; i <= newNumDocuments; i++) {
+                            System.out.print("Enter new document " + i + ": ");
+                            String newDocument = scanner.nextLine();
+                            newDocuments.add(newDocument);
+                        }
+
+                        // Update the claim with new details
+                        claimToUpdate = new Claim(claimToUpdate.getId(), newClaimDate, newInsuredPerson, newCardNumber,
+                                newExamDate, newDocuments, newClaimAmount, newStatus, newReceiverBankingInfo);
+                        claimProcessManager.updateClaim(claimToUpdate);
+                        System.out.println("Claim updated successfully.");
+                    } else {
+                        System.out.println("Claim with ID " + updateClaimId + " does not exist.");
+                    }
+                    break;
                 case 3:
                 case 4:
                 case 5:
