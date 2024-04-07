@@ -192,6 +192,33 @@ public class InsuranceClaimsManagementSystem {
                     }
                     break;
                 case 5:
+                    // Implement view all claims functionality
+                    System.out.println("Viewing all claims:");
+
+                    // Retrieve all claims
+                    List<Claim> allClaims = claimProcessManager.getAllClaims();
+
+                    // Check if there are any claims
+                    if (allClaims.isEmpty()) {
+                        System.out.println("No claims found.");
+                    } else {
+                        // Display details of all claims
+                        for (Claim claim : allClaims) {
+                            System.out.println("Claim ID: " + claim.getId());
+                            System.out.println("Claim Date: " + FileManager.dateFormat.format(claim.getClaimDate()));
+                            System.out.println("Insured Person: " + claim.getInsuredPerson());
+                            System.out.println("Card Number: " + claim.getCardNumber());
+                            System.out.println("Exam Date: " + FileManager.dateFormat.format(claim.getExamDate()));
+                            System.out.println("Claim Amount: " + claim.getClaimAmount());
+                            System.out.println("Status: " + claim.getStatus());
+                            System.out.println("Receiver Banking Info: " + claim.getReceiverBankingInfo());
+                            System.out.println("Documents:");
+                            for (String document : claim.getDocuments()) {
+                                System.out.println("- " + document);
+                            }
+                            System.out.println();
+                        }
+                    }
                 case 6:
             }
         }while (choice != 6);
