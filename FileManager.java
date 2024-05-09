@@ -23,9 +23,13 @@ public class FileManager {
                 String id = parts[0];
                 String fullName = parts[1];
                 String cardNumber = parts[2];
-                customers.add(new Customer(id, fullName, findInsuranceCard(cardNumber)));
+                String cardHolder = parts[3];
+                String policyOwner = parts[4];
+                Date expirationDate = dateFormat.parse(parts[5]);
+                InsuranceCard insuranceCard = new InsuranceCard(cardNumber, cardHolder, policyOwner, expirationDate);
+                customers.add(new Customer(id, fullName, insuranceCard));
             }
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException | ParseException e) {
             e.printStackTrace();
         }
         return customers;
@@ -78,9 +82,19 @@ public class FileManager {
     public static void saveCustomers(List<Customer> customers) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(CUSTOMERS_FILE))) {
             for (Customer customer : customers) {
-                writer.println(customer.getId() + "," + customer.getFullName() + "," + customer.getInsuranceCard().getCardNumber());
+                writer.println(customer.getId() + "," + customer.getFullName() + "," + customer.getInsuranceCard().getCardNumber()
+                        + "," + customer.getInsuranceCard().getCardHolder() + "," + customer.getInsuranceCard().getPolicyOwner()
+                        + "," +customer.getInsuranceCard().getExpirationDate());
             }
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try (PrintWriter writer = new PrintWriter(new FileWriter(INSURANCE_CARDS_FILE))) {
+            for(Customer customer : customers) {
+                writer.println(customer.getInsuranceCard().getCardNumber() + "," + customer.getInsuranceCard().getCardHolder()
+                        + "," +customer.getInsuranceCard().getPolicyOwner() + "," + customer.getInsuranceCard().getExpirationDate());
+            }
+        }catch (IOException e) {
             e.printStackTrace();
         }
     }
