@@ -13,3 +13,4 @@
 3456789012,Amelia Rodriguez,Amelia Rodriguez,2025-01-01
 4567890123,Mason Lee,Mason Lee,2025-02-01
 5678901234,Sofia Hernandez,Sofia Hernandez,2025-03-01
+1010101010,hugo,haha,2006-05-01

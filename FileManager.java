@@ -84,7 +84,7 @@ public class FileManager {
             for (Customer customer : customers) {
                 writer.println(customer.getId() + "," + customer.getFullName() + "," + customer.getInsuranceCard().getCardNumber()
                         + "," + customer.getInsuranceCard().getCardHolder() + "," + customer.getInsuranceCard().getPolicyOwner()
-                        + "," +customer.getInsuranceCard().getExpirationDate());
+                        + "," +dateFormat.format(customer.getInsuranceCard().getExpirationDate()));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -92,7 +92,7 @@ public class FileManager {
         try (PrintWriter writer = new PrintWriter(new FileWriter(INSURANCE_CARDS_FILE))) {
             for(Customer customer : customers) {
                 writer.println(customer.getInsuranceCard().getCardNumber() + "," + customer.getInsuranceCard().getCardHolder()
-                        + "," +customer.getInsuranceCard().getPolicyOwner() + "," + customer.getInsuranceCard().getExpirationDate());
+                        + "," +customer.getInsuranceCard().getPolicyOwner() + "," + dateFormat.format(customer.getInsuranceCard().getExpirationDate()));
             }
         }catch (IOException e) {
             e.printStackTrace();
