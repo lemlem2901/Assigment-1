@@ -86,7 +86,8 @@ public class FileManager {
                 String [] parts = scanner.nextLine().split(",");
                 String userName = parts[0];
                 String password = parts[1];
-                accounts.add(new Account(userName, password));
+                String role = parts[2];
+                accounts.add(new Account(userName, password, role));
             }
         }catch (IOException e){
             e.printStackTrace();
