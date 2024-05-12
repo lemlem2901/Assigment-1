@@ -133,6 +133,14 @@ public class FileManager {
             e.printStackTrace();
         }
     }
+    public static Account findAccount(String userName) {
+        for (Account account : readAccountsFromFile()) {
+            if(account.getUserName().equals(userName)){
+                return account;
+            }
+        }
+        return null;
+    }
     // Save Account to file
     public static void saveAccount(List<Account> accounts) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(ACCOUNTS_FILE))) {
