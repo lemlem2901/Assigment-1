@@ -11,8 +11,19 @@ public class AccountProcessManagerImpl implements AccountProcessManager {
 
     public void removeAccount(Account userName) {accounts.removeIf(account -> account.getUserName().equals(userName));}
 
-    public void changePassword(Account account, String password){
-        List<Account> accounts = FileManager.readAccountsFromFile()
+    public void filterAccount(Account account){
+
     }
 
+    public void changePassword(Account account, String password){
+        List<Account> accounts = FileManager.readAccountsFromFile();
+    }
+    public boolean checkAccount(String username, String password) {
+        for (Account account : accounts) {
+            if (account.getUserName().equals(username) && account.getPassword().equals(password)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
