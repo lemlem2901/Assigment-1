@@ -10,10 +10,10 @@ public class FileManager {
     private static final String CUSTOMERS_FILE = "customers.txt";
     private static final String INSURANCE_CARDS_FILE = "insurance_cards.txt";
     private static final String CLAIMS_FILE = "claims.txt";
+    private static final String ACCOUNTS_FILE = "accounts.txt";
 
     // Date format for parsing dates
     static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
     // Read customers from file
     public static List<Customer> readCustomersFromFile() {
         List<Customer> customers = new ArrayList<>();
@@ -78,6 +78,21 @@ public class FileManager {
         }
         return claims;
     }
+    // Read accounts from file
+    public static List<Account> readAccountsFromFile(){
+        List<Account> accounts = new ArrayList<>();
+        try (Scanner scanner = new Scanner(new File(ACCOUNTS_FILE))) {
+            while (scanner.hasNextLine()) {
+                String [] parts = scanner.nextLine().split(",");
+                String userName = parts[0];
+                String password = parts[1];
+                accounts.add(new Account(userName, password));
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return accounts;
+    }
     // Save customers to file
     public static void saveCustomers(List<Customer> customers) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(CUSTOMERS_FILE))) {
@@ -112,6 +127,16 @@ public class FileManager {
                         claim.getClaimAmount() + "," +
                         claim.getStatus() + "," +
                         claim.getReceiverBankingInfo());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    // Save Account to file
+    public static void saveAccount(List<Account> accounts) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(ACCOUNTS_FILE))) {
+            for (Account account : accounts) {
+                writer.println(account.getUserName() + "," + account.getPassword());
             }
         } catch (IOException e) {
             e.printStackTrace();
