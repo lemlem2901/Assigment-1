@@ -7,18 +7,21 @@ public class Customer {
     private String fullName;
     private InsuranceCard insuranceCard;
     private List<Claim> claims;
+    private String familyId;
 
-    public Customer(String id, String fullName, InsuranceCard insuranceCard) {
+    public Customer(String id, String fullName, InsuranceCard insuranceCard,String familyId) {
         this.id = id;
         this.fullName = fullName;
         this.insuranceCard = insuranceCard;
         this.claims = new ArrayList<>();
+        this.familyId = familyId;
     }
     // Getters and setters
     public String getId() {
         return id;
     }
 
+    public String getFamilyId() { return familyId; }
     public String getFullName() {
         return fullName;
     }
