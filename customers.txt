@@ -14,3 +14,17 @@ c3456789,Amelia Rodriguez,3456789012,Isabella Robinson,Ethan Clark,2025-01-01,00
 c4567890,Mason Lee,4567890123,Isabella Robinson,Ethan Clark,2025-02-01,n003
 c5678901,Sofia Hernandez,5678901234,Sofia Hernandez,hugo alo,2025-03-01,n004
 c1212121,Hugo Alo,1010101010,Sofia Hernandez,Hugo Alo,2006-03-01,n004
+c6789012,Emma Garcia,6789012345,Emma Garcia,Daniel Ramirez,2024-06-01,n005
+c7890123,Daniel Ramirez,7890123456,Emma Garcia,Daniel Ramirez,2024-07-01,n005
+c8901234,Ava Gonzalez,8901234567,Emma Garcia,Daniel Ramirez,2024-07-01,n005
+c9012345,Jacob Torres,9012345678,Emma Garcia,Daniel Ramirez,2024-07-01,n005
+c0123456,Mia Perez,0123456789,Mia Perez,Matthew Flores,2024-10-01,n006
+c1234567,Matthew Flores,1234567890,Mia Perez,Matthew Flores,2024-11-01,n006
+c2345678,Abigail Sanchez,2345678901,Abigail Sanchez,Alexander Rivera,2024-12-01,n007
+c3456789,Alexander Rivera,3456789012,Abigail Sanchez,Alexander Rivera,2025-01-01,n007
+c4567890,Sophia Gutierrez,4567890123,Abigail Sanchez,Alexander Rivera,2024-12-01,n007
+c5678901,Benjamin Jimenez,5678901234,Abigail Sanchez,Alexander Rivera,2024-12-01,n007
+c6789012,Isabella Castillo,6789012345,Abigail Sanchez,Alexander Rivera,2024-12-01,n007
+c7890123,Samuel Morales,7890123456,Samuel Morales,Michael Gomez,2025-05-01,n008
+c8901234,Michael Gomez,8901234567,Samuel Morales,Michael Gomez,2025-05-01,n008
+c9012345,Victoria Reyes,9012345678,Samuel Morales,Michael Gomez,2025-05-01,n008
