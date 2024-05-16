@@ -25,10 +25,13 @@ public class FileManager {
                 String cardNumber = parts[2];
                 String cardHolder = parts[3];
                 String policyOwner = parts[4];
-                String familyId = parts[5];
                 Date expirationDate = dateFormat.parse(parts[5]);
+                String familyId = parts[6];
+                String phone = parts[7];
+                String address = parts[8];
+                String email = parts[9];
                 InsuranceCard insuranceCard = new InsuranceCard(cardNumber, cardHolder, policyOwner, expirationDate);
-                customers.add(new Customer(id, fullName, insuranceCard, familyId));
+                customers.add(new Customer(id, fullName, insuranceCard, familyId, phone, address, email));
             }
         } catch (FileNotFoundException | ParseException e) {
             e.printStackTrace();
@@ -102,7 +105,8 @@ public class FileManager {
             for (Customer customer : customers) {
                 writer.println(customer.getId() + "," + customer.getFullName() + "," + customer.getInsuranceCard().getCardNumber()
                         + "," + customer.getInsuranceCard().getCardHolder() + "," + customer.getInsuranceCard().getPolicyOwner()
-                        + "," +dateFormat.format(customer.getInsuranceCard().getExpirationDate() + "," + customer.getFamilyId()));
+                        + "," +dateFormat.format(customer.getInsuranceCard().getExpirationDate() + "," + customer.getFamilyId()
+                        + "," + customer.getPhone() + "," + customer.getAddress() + "," +customer.getEmail() ));
             }
         } catch (IOException e) {
             e.printStackTrace();
