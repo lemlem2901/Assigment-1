@@ -68,11 +68,12 @@ public class FileManager {
                 double claimAmount = Double.parseDouble(parts[6]);
                 String status = parts[7];
                 String receiverBankingInfo = parts[8];
+                String insuredPersonId = parts[9];
                 List<String> documents = new ArrayList<>();
-                for (int i = 5; i < parts.length - 3; i++) {
+                for (int i = 5; i < parts.length - 4; i++) {
                     documents.add(parts[i]);
                 }
-                claims.add(new Claim(id, claimDate, insuredPerson, cardNumber, examDate, documents, claimAmount, status, receiverBankingInfo));
+                claims.add(new Claim(id, claimDate, insuredPerson, cardNumber, examDate, documents, claimAmount, status, receiverBankingInfo, insuredPersonId));
             }
         } catch (FileNotFoundException | ParseException e) {
             e.printStackTrace();
@@ -128,7 +129,8 @@ public class FileManager {
                         String.join(";", claim.getDocuments()) + "," + // Join documents with ";"
                         claim.getClaimAmount() + "," +
                         claim.getStatus() + "," +
-                        claim.getReceiverBankingInfo());
+                        claim.getReceiverBankingInfo() + "," +
+                        claim.getInsuredPersonId() );
             }
         } catch (IOException e) {
             e.printStackTrace();

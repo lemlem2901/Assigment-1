@@ -13,8 +13,10 @@ public class Claim {
     private String status;
     private String receiverBankingInfo;
 
+    private String insuredPersonId;
+
     public Claim(String id, Date claimDate, String insuredPerson, String cardNumber, Date examDate,
-                 List<String> documents, double claimAmount, String status, String receiverBankingInfo) {
+                 List<String> documents, double claimAmount, String status, String receiverBankingInfo, String insuredPersonId) {
         this.id = id;
         this.claimDate = claimDate;
         this.insuredPerson = insuredPerson;
@@ -24,6 +26,7 @@ public class Claim {
         this.claimAmount = claimAmount;
         this.status = status;
         this.receiverBankingInfo = receiverBankingInfo;
+        this.insuredPersonId = insuredPersonId;
     }
     //getter
     public String getId() {
@@ -57,7 +60,9 @@ public class Claim {
     public String getStatus() {
         return status;
     }
-
+    public String getInsuredPersonId() {
+        return insuredPersonId;
+    }
     public String getReceiverBankingInfo() {
         return receiverBankingInfo;
     }

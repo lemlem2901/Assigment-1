@@ -6,14 +6,12 @@ public class Customer {
     private String id;
     private String fullName;
     private InsuranceCard insuranceCard;
-    private List<Claim> claims;
     private String familyId;
 
     public Customer(String id, String fullName, InsuranceCard insuranceCard,String familyId) {
         this.id = id;
         this.fullName = fullName;
         this.insuranceCard = insuranceCard;
-        this.claims = new ArrayList<>();
         this.familyId = familyId;
     }
     // Getters and setters
@@ -30,11 +28,4 @@ public class Customer {
         return insuranceCard;
     }
 
-    public List<Claim> getClaims() {
-        return claims;
-    }
-
-    public void addClaim(Claim claim) {
-        claims.add(claim);
-    }
 }
