@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 f123456789,2024-04-01,John Doe,1234567890,2024-04-07,document1.pdf;document2.pdf,1000.0,New,BankA-ReceiverNameA-123456,c1234567
 f234567890,2024-04-02,Jane Smith,2345678901,2024-04-08,document3.pdf,1500.0,Processing,BankB-ReceiverNameB-234567,c2345678
 f345678901,2024-04-03,Alice Johnson,3456789012,2024-04-09,document4.pdf;document5.pdf,2000.0,Done,BankC-ReceiverNameC-345678,c3456789
@@ -14,35 +13,3 @@ f234567890,2024-04-12,Ethan Clark,2345678901,2024-04-18,document18.pdf,6500.0,Do
 f345678901,2024-04-13,Amelia Rodriguez,3456789012,2024-04-19,document19.pdf;document20.pdf,7000.0,New,BankM-ReceiverNameM-345678,c3456789
 f456789012,2024-04-14,Mason Lee,4567890123,2024-04-20,document21.pdf,7500.0,Processing,BankN-ReceiverNameN-456789,c4567890
 f567890123,2024-04-15,Sofia Hernandez,5678901234,2024-04-21,document22.pdf;document23.pdf,8000.0,Done,BankO-ReceiverNameO-567890,c5678901
-=======
-f234527891,4/16/2024,John Doe,1234567890,4/22/2024,document24.pdf,8500,New,BankP-John Doe-234567
-f045678912,4/17/2024,Jane Smith,2345678901,4/23/2024,document25.pdf;document26.pdf,9000,Processing,BankQ-Jane Smith-345678
-f456781123,4/18/2024,Alice Johnson,3456789002,4/24/2024,document27.pdf,9500,Done,BankR-Alice Johnson-456789
-f567891034,4/19/2024,Bob Williams,4567890123,4/25/2024,document28.pdf;document29.pdf,10000,New,BankS-Bob Williams-567890
-f678992345,4/20/2024,Emily Davis,5678901234,4/26/2024,document30.pdf,10500,Processing,BankT-Emily Davis-678901
-f789125456,4/21/2024,Michael Wilson,6789012345,4/27/2024,document31.pdf;document32.pdf,11000,Done,BankU-Michael Wilson-789012
-f891234525,4/22/2024,Sophia Brown,7890123456,4/28/2024,document33.pdf,11500,New,BankV-Sophia Brown-890123
-f901334678,4/23/2024,William Miller,8901234567,4/29/2024,document34.pdf;document35.pdf,12000,Processing,BankW-William Miller-901234
-f012344789,4/24/2024,Olivia Garcia,9012345678,4/30/2024,document36.pdf,12500,Done,BankX-Olivia Garcia-012345
-f163456890,4/25/2024,Liam Martinez,1234567896,5/1/2024,document37.pdf;document38.pdf,13000,New,BankY-Liam Martinez-123456
-f234557901,4/26/2024,Isabella Robinson,1234567800,5/2/2024,document39.pdf,13500,Processing,BankZ-Isabella Robinson-234567
-f345678032,4/27/2024,Ethan Clark,2345678902,5/3/2024,document40.pdf;document41.pdf,14000,Done,BankA1-Ethan Clark-345678
-f456687123,4/28/2024,Amelia Rodriguez,3456789012,5/4/2024,document42.pdf,14500,New,BankB1-Amelia Rodriguez-456789
-f367890234,4/29/2024,Mason Lee,4567890124,5/5/2024,document43.pdf;document44.pdf,15000,Processing,BankC1-Mason Lee-567890
-f678901346,4/30/2024,Sofia Hernandez,5678901235,5/6/2024,document45.pdf,15500,Done,BankD1-Sofia Hernandez-678901
-f123856789,4/1/2024,Hugo Alo,1010101010,4/7/2024,document1.pdf;document2.pdf,1000,New,BankA-Hugo Alo-123456
-f23497890,4/2/2024,Emma Garcia,6789012346,4/8/2024,document3.pdf,1500,Processing,BankB-Emma Garcia-234567
-f345998901,4/3/2024,Daniel Ramirez,7890123457,4/9/2024,document4.pdf;document5.pdf,2000,Done,BankC-Daniel Ramirez-345678
-f456783012,4/4/2024,Ava Gonzalez,8901234568,4/10/2024,document6.pdf,2500,New,BankD-Ava Gonzalez-456789
-f569890123,4/5/2024,Jacob Torres,9012345679,4/11/2024,document7.pdf;document8.pdf,3000,Processing,BankE-Jacob Torres-567890
-f678901294,4/6/2024,Mia Perez,1234567904,4/12/2024,document9.pdf,3500,Done,BankF-Mia Perez-678901
-f759012345,4/7/2024,Matthew Flores,1234567891,4/13/2024,document10.pdf;document11.pdf,4000,New,BankG-Matthew Flores-789012
-f890125456,4/8/2024,Abigail Sanchez,2345678903,4/14/2024,document12.pdf,4500,Processing,BankH-Abigail Sanchez-890123
-f905234567,4/9/2024,Alexander Rivera,3456789013,4/15/2024,document13.pdf;document14.pdf,5000,Done,BankI-Alexander Rivera-901234
-f012545678,4/10/2024,Sophia Gutierrez,4567890125,4/16/2024,document15.pdf,5500,New,BankJ-Sophia Gutierrez-012345
-f123455579,4/11/2024,Benjamin Jimenez,5678901236,4/17/2024,document16.pdf;document17.pdf,6000,Processing,BankK-Benjamin Jimenez-123456
-f235567890,4/12/2024,Isabella Castillo,6789012347,4/18/2024,document18.pdf,6500,Done,BankL-Isabella Castillo-234567
-f345668501,4/13/2024,Samuel Morales,7890123458,4/19/2024,document19.pdf;document20.pdf,7000,New,BankM-Samuel Morales-345678
-f456759012,4/14/2024,Michael Gomez,8901234569,4/20/2024,document21.pdf,7500,Processing,BankN-Michael Gomez-456789
-f565800123,4/15/2024,Victoria Reyes,9012345680,4/21/2024,document22.pdf;document23.pdf,8000,Done,BankO-Victoria Reyes-567890
->>>>>>> 34bdc0fa9b338f554766270c099706cfe30037d4
