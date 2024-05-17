@@ -1,7 +1,7 @@
 /**
  * @author <Nguyen Dinh Lam - s3990403>
  */
-import java.util.*;
+
 public class Customer {
     private String id;
     private String fullName;
@@ -30,8 +30,11 @@ public class Customer {
         return fullName;
     }
     public String getPhone() { return phone; }
+    public void setPhone(String newPhone) { this.phone = newPhone;}
     public String getAddress() { return address;}
+    public void setAddress(String newAddress) { this.address = newAddress;}
     public String getEmail() { return email;}
+    public void setEmail(String newEmail) { this.email = newEmail;}
 
     public InsuranceCard getInsuranceCard() {
         return insuranceCard;

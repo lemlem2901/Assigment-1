@@ -52,7 +52,6 @@ public class Claim {
     public List<String> getDocuments() {
         return documents;
     }
-
     public double getClaimAmount() {
         return claimAmount;
     }
