@@ -105,8 +105,8 @@ public class FileManager {
             for (Customer customer : customers) {
                 writer.println(customer.getId() + "," + customer.getFullName() + "," + customer.getInsuranceCard().getCardNumber()
                         + "," + customer.getInsuranceCard().getCardHolder() + "," + customer.getInsuranceCard().getPolicyOwner()
-                        + "," +dateFormat.format(customer.getInsuranceCard().getExpirationDate() + "," + customer.getFamilyId()
-                        + "," + customer.getPhone() + "," + customer.getAddress() + "," +customer.getEmail() ));
+                        + "," +dateFormat.format(customer.getInsuranceCard().getExpirationDate()) + "," + customer.getFamilyId()
+                        + "," + customer.getPhone() + "," + customer.getAddress() + "," +customer.getEmail() );
             }
         } catch (IOException e) {
             e.printStackTrace();
